@@ -35,7 +35,7 @@ if (isset($_POST['editar'])) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -53,31 +53,31 @@ if (isset($_POST['editar'])) {
                 <form action="guardar_bd.php" method="POST" enctype="multipart/form-data"> <!--el -enctype="multipart/form-data"- permite agregar imagenes o archivos en un input de tipo FILE-->
                     <div class="mb-3">
                         <label for="cod" class="form-label">Código del Producto:</label>
-                        <input type="text" id="cod" name="cod" class="form-control" require>
+                        <input type="text" id="cod" name="cod" class="form-control" value="<?php echo $codigo; ?>" require>
                     </div>
                     <div class="mb-3">
                         <label for="nom" class="form-label">Nombre del Producto:</label>
-                        <input type="text" id="nom" name="nom" class="form-control" require>
+                        <input type="text" id="nom" name="nom" class="form-control" value="<?php echo $nom; ?>" require>
                     </div>
                     <div class="mb-3">
                         <label for="desc" class="form-label">Descripción del Producto:</label>
-                        <input type="text" id="desc" name="desc" class="form-control" require>
+                        <input type="text" id="desc" name="desc" class="form-control" value="<?php echo $desc; ?>" require>
                     </div>
                     <div class="mb-3">
                         <label for="cantidad" class="form-label">Stock del Producto: </label>
-                        <input type="number" id="cantidad" name="cantidad" step="any" class="form-control" onchange="verificar()" require>
+                        <input type="number" id="cantidad" name="cantidad" step="any" class="form-control" onchange="verificar()" value="<?php echo $cantidad; ?>" require>
                     </div>
                     <div class="mb-3">
                         <label for="valorProd" class="form-label">Precio Unitario del Producto: </label>
-                        <input type="number" id="valorProd" name="valorProd" step="any" class="form-control" require>
+                        <input type="number" id="valorProd" name="valorProd" step="any" class="form-control" value="<?php echo $valorProd; ?>" require>
                     </div>
                     <!--################################################imagen################################################-->
                     <div class="mb-3">
                         <label for="img" class="form-label">Imagen del Producto:</label>
-                        <input type="file" id="img" name="img" class="form-control" accept="image/*">
+                        <input type="file" id="img" name="img" class="form-control" accept="image/*" value="<?php echo $img; ?>">
                     </div>
                     <!--######################################################################################################-->
-                    <input type="submit" class="btn btn-success btn-block" name="save" value="Crear">
+                    <input type="submit" class="btn btn-success btn-block" name="save" value="editar">
                 </form>
             </div>
         </div>
