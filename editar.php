@@ -14,7 +14,7 @@ if (isset($_GET['codigo'])) {
         $img= $row['imagen'];
     }
 }
-if (isset($_POST['editar'])) {
+if (isset($_POST['edit'])) {
     $cod = $_POST['cod']; 
     $nom = $_POST['nom'];
     $desc = $_POST['desc'];
@@ -77,7 +77,7 @@ if (isset($_POST['editar'])) {
                         <input type="file" id="img" name="img" class="form-control" accept="image/*" value="<?php echo $img; ?>">
                     </div>
                     <!--######################################################################################################-->
-                    <input type="submit" class="btn btn-success btn-block" name="save" value="editar">
+                    <input type="submit" class="btn btn-success btn-block" name="edit" value="editar">
                 </form>
             </div>
         </div>

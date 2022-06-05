@@ -25,7 +25,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 <?php session_unset();}?> 
-
+                <h2> Crear Producto </h2>
                 <a href="crear_producto.php" class="btn btn-success btn-block-primary">
                     <i class="bi bi-bag-plus-fill"></i>
                 </a>
