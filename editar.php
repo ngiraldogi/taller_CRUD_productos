@@ -1,26 +1,26 @@
 <?php
 include("bd.php");
 if (isset($_GET['codigo'])) {
-    $cod = $_GET['codigo'];
-    $query = "SELECT * FROM producto WHERE codigo = $cod";
+    $codigo = $_GET['codigo'];
+    $query = "SELECT * FROM producto WHERE codigo = $codigo";
     $result = mysqli_query($conn, $query);
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_array($result);
-        $cod = $_POST['codigo']; 
-        $nom = $_POST['nombre'];
-        $desc = $_POST['descripcion'];
-        $cantidad = $_POST['stock'];
-        $valorProd = $_POST['precio'];
-        $img= $_POST['imagen'];
+        $codigo = $row['codigo']; 
+        $nom = $row['nombre'];
+        $desc = $row['descripcion'];
+        $cantidad = $row['stock'];
+        $valorProd = $row['precio'];
+        $img= $row['imagen'];
     }
 }
 if (isset($_POST['editar'])) {
-    $cod = $_POST['codigo']; 
-    $nom = $_POST['nombre'];
-    $desc = $_POST['descripcion'];
-    $cantidad = $_POST['stock'];
-    $valorProd = $_POST['precio'];
-    $img= $_POST['imagen'];
+    $cod = $_POST['cod']; 
+    $nom = $_POST['nom'];
+    $desc = $_POST['desc'];
+    $cantidad = $_POST['cantidad'];
+    $valorProd = $_POST['valorProd'];
+    $img= $_POST['img'];
     $query = "UPDATE producto SET codigo=$cod, nombre='$nom', descripcion='$desc', stock=$cantidad, precio=$valorProd , imagen=$img WHERE codigo=$id";
     $result = mysqli_query($conn, $query);
     if (!$result) {
@@ -28,7 +28,7 @@ if (isset($_POST['editar'])) {
         $_SESSION['tipo_mensaje'] = "danger";
         //die("Fallo consulta.");
     } else {
-        $_SESSION['mensaje'] = "Estudiante editado";
+        $_SESSION['mensaje'] = "Producto editado";
         $_SESSION['tipo_mensaje'] = "success";
     }
     header("Location: crear_producto.php");
