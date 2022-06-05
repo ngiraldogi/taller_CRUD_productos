@@ -58,10 +58,10 @@
                                     <td><img class="imagenes" src="files/<?= $row['imagen'] ?>" alt=""/></td>
                                     <td>
 
-                                        <a href="editar.php?id=<?php echo $row['codigo']?>" class="btn btn-primary"> <!--vinculo al archivo editar.php y manda una variable a ese archivo-->
+                                        <a href="editar.php?codigo=<?php echo $row['codigo']?>" class="btn btn-primary"> <!--vinculo al archivo editar.php y manda una variable a ese archivo-->
                                             <i class="bi bi-pencil-fill"></i> <!--etiqueta i es de iconos-->
                                         </a>
-                                        <a href="eliminar.php?id=<?php echo $row['codigo']?>" class="btn btn-danger">
+                                        <a href="eliminar.php?codigo=<?php echo $row['codigo']?>" class="btn btn-danger">
                                             <i class="bi bi-trash-fill"></i>
                                         </a>
                                     </td>
